@@ -1,0 +1,14 @@
+version: '3.6'
+services:
+  postgres_96:
+    image: postgres:9.6
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=oauth2-server
+      - POSTGRES_USER=oauth2-server
+      - POSTGRES_DB=oauth2-server
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+volumes:
+  postgres_data:
