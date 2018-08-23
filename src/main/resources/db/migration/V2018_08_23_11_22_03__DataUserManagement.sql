@@ -1,14 +1,15 @@
-insert into user_management.users (id,
-                                   username,
-                                   email,
-                                   password,
-                                   is_enabled,
-                                   is_locked,
-                                   is_sudo,
-                                   created_by,
-                                   created_date,
-                                   last_updated_by,
-                                   last_updated_date)
+insert into user_management.users (
+  id,
+  username,
+  email,
+  password,
+  is_enabled,
+  is_locked,
+  is_sudo,
+  created_by,
+  created_date,
+  last_updated_by,
+  last_updated_date)
 values ('sudo', 'root', 'root@example.com', '$2a$11$BN3ZZd8JnkfmDHkAcIt8MOym3rqMIj/6AkrOxl7gpIBdkdLbD6iwm',
         true, false, true, 'migration', now(), null, null),
        ('user', 'user', 'user@example.com', '$2a$11$8WpUcgUaKUeqLL3W1uSWR.LfOFdzLptfF5/qUcI7.cx/.fCpuw/5m',
@@ -28,27 +29,30 @@ insert into user_management.group_role (id, name, description)
 VALUES ('USER_MANAGEMENT', 'ALL MANAGEMENT USER', '-'),
        ('GROUP_MANAGEMENT', 'ALL GROUP ROLE MANAGEMENT', '-');
 
-insert into user_management.group_member_role (id,
-                                               group_id,
-                                               role_id,
-                                               created_by,
-                                               created_date,
-                                               last_update_by,
-                                               last_update_date)
-values ('USER_MANAGEMENT_1', 'USER_MANAGEMENT', 1, 'migration', now(), null, null),
-       ('USER_MANAGEMENT_2', 'USER_MANAGEMENT', 2, 'migration', now(), null, null),
-       ('USER_MANAGEMENT_3', 'USER_MANAGEMENT', 3, 'migration', now(), null, null),
-       ('USER_MANAGEMENT_4', 'USER_MANAGEMENT', 4, 'migration', now(), null, null),
-       ('GROUP_MANAGEMENT_1', 'GROUP_MANAGEMENT', 5, 'migration', now(), null, null),
-       ('GROUP_MANAGEMENT_2', 'GROUP_MANAGEMENT', 6, 'migration', now(), null, null),
-       ('GROUP_MANAGEMENT_3', 'GROUP_MANAGEMENT', 7, 'migration', now(), null, null),
-       ('GROUP_MANAGEMENT_4', 'GROUP_MANAGEMENT', 8, 'migration', now(), null, null);
+insert into user_management.group_member_role (
+  id,
+  group_id,
+  role_id,
+  created_by,
+  created_date,
+  last_update_by,
+  last_update_date)
+values
+  ('USER_MANAGEMENT_1', 'USER_MANAGEMENT', 1, 'migration', now(), null, null),
+  ('USER_MANAGEMENT_2', 'USER_MANAGEMENT', 2, 'migration', now(), null, null),
+  ('USER_MANAGEMENT_3', 'USER_MANAGEMENT', 3, 'migration', now(), null, null),
+  ('USER_MANAGEMENT_4', 'USER_MANAGEMENT', 4, 'migration', now(), null, null),
+  ('GROUP_MANAGEMENT_1', 'GROUP_MANAGEMENT', 5, 'migration', now(), null, null),
+  ('GROUP_MANAGEMENT_2', 'GROUP_MANAGEMENT', 6, 'migration', now(), null, null),
+  ('GROUP_MANAGEMENT_3', 'GROUP_MANAGEMENT', 7, 'migration', now(), null, null),
+  ('GROUP_MANAGEMENT_4', 'GROUP_MANAGEMENT', 8, 'migration', now(), null, null);
 
-INSERT INTO user_management.group_member_users (id,
-                                                user_id,
-                                                group_id,
-                                                created_by,
-                                                created_date,
-                                                last_update_by,
-                                                last_update_date)
+INSERT INTO user_management.group_member_users (
+  id,
+  user_id,
+  group_id,
+  created_by,
+  created_date,
+  last_update_by,
+  last_update_date)
 values ('USER_GROUP_1', 'user', 'USER_MANAGEMENT', 'migration', now(), null, null);
